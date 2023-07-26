@@ -1,7 +1,11 @@
-h2 {
+h2, h1 {
   color: #c9c9bb;
 }
 
 h5{
   font-size: 14px;
+}
+
+meta{
+  color: red
 }

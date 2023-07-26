@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Avatar, Col, Collapse, List, Row, Tag } from "antd";
+import { Avatar, Card, Carousel, Col, Collapse, Image, List, Row, Tag } from "antd";
 import {
   motion,
   useMotionValue,
@@ -23,8 +23,12 @@ import ReactIcon from "../assets/icons/react.png";
 import Typescript from "../assets/icons/typescript.png";
 import Paybrokers from "../assets/icons/Paybrokers.jpg";
 import Loupen from "../assets/icons/Loupen.jpg";
+import DashLogin from "../assets/cases/login.png";
+import DashBalance from "../assets/cases/balance.png";
+import DashBalanceDash from "../assets/cases/balance_dashboard.png";
 import AnimatedTextCharacter from "../components/TextSpring";
 import "./App.css";
+import Meta from "antd/es/card/Meta";
 
 export const Home = () => {
   const Mobile = useMediaQuery({ maxWidth: "750px" });
@@ -285,7 +289,6 @@ export const Home = () => {
                   <Col span={14} style={{ marginLeft: "15px" }}>
                     <Collapse
                       style={{ color: "#fff", width: "100%" }}
-                 
                       items={[
                         {
                           key: "1",
@@ -320,7 +323,7 @@ export const Home = () => {
                                                 width: "auto",
                                                 paddingLeft: "30px",
                                                 paddingRight: "30px",
-                                                fontWeight: "600"
+                                                fontWeight: "600",
                                               }}
                                             >
                                               {hab}
@@ -393,6 +396,53 @@ export const Home = () => {
                         },
                       ]}
                     />
+                  </Col>
+                  <Col span={23} style={{ marginLeft: "45px" }}>
+                    <h1>Cases:</h1>
+                    <Row style={{ width: "100%" }}>
+                      <Col span={8}>
+                        <Card
+                          hoverable
+                          style={{ width: "100%" }}
+                          cover={
+                            <Carousel autoplay autoplaySpeed={3500}>
+                              <div>
+                                <Image
+                                  alt="example"
+                                  src={DashLogin}
+                                  style={{ width: "100%" }}
+                                />
+                              </div>
+                              <div>
+                                <Image
+                                  alt="example"
+                                  src={DashBalance}
+                                  style={{ width: "100%" }}
+                                />
+                              </div>
+                              <div>
+                                <Image
+                                  alt="example"
+                                  src={DashBalanceDash}
+                                  style={{ width: "100%" }}
+                                />
+                              </div>
+                              <div>
+                                <Image
+                                  alt="example"
+                                  src={DashLogin}
+                                  style={{ width: "100%" }}
+                                />
+                              </div>
+                            </Carousel>
+                          }
+                        >
+                          <Meta description="Dashboard" />
+                        </Card>
+                      </Col>
+
+                      
+                    </Row>
                   </Col>
                 </Row>
               </Row>
