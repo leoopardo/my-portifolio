@@ -9,9 +9,14 @@ import { useMediaQuery } from "react-responsive";
 interface AnitedTxtInterface {
   text: string;
   style?: any;
+  textStyle?: any;
 }
 
-const AnimatedTextCharacter = ({ text, style }: AnitedTxtInterface) => {
+const AnimatedTextCharacter = ({
+  text,
+  style,
+  textStyle,
+}: AnitedTxtInterface) => {
   const Mobile = useMediaQuery({ maxWidth: "750px" });
   const [, setScrolling] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
@@ -73,7 +78,7 @@ const AnimatedTextCharacter = ({ text, style }: AnitedTxtInterface) => {
       {!Mobile
         ? letters.map((letter, index) => (
             <motion.h2
-              style={{ marginRight: "10px", fontSize: "42px" }}
+              style={{ marginRight: "10px", fontSize: "42px", ...textStyle }}
               variants={child}
               key={index}
             >
@@ -82,7 +87,7 @@ const AnimatedTextCharacter = ({ text, style }: AnitedTxtInterface) => {
           ))
         : letters.map((letter, index) => (
             <motion.h2
-              style={{ marginRight: "10px", fontSize: "22px" }}
+              style={{ marginRight: "10px", fontSize: "22px", ...textStyle }}
               variants={child}
               key={index}
             >
