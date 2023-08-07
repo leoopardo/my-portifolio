@@ -31,7 +31,7 @@ import ReactIcon from "../../assets/icons/react.png";
 import Typescript from "../../assets/icons/typescript.png";
 import AnimatedTextCharacter from "../../components/TextSpring";
 import "../App.css";
-import { GithubFilled, LinkedinFilled } from "@ant-design/icons";
+import { GithubFilled, LinkedinFilled, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 
 export const Desktop = () => {
   const [, setScrolling] = useState(false);
@@ -194,7 +194,128 @@ export const Desktop = () => {
                 style={{ marginTop: "-80px" }}
               />
             </Col>
-            <Col span={13} style={{ marginLeft: "15px", marginTop: "-20px" }}>
+            <Col span={12} style={{ marginTop: -30 }}>
+              <ul style={{ listStyle: "none", display: "flex" }}>
+                <li style={{ marginRight: "8px" }}>
+                  <motion.a
+                    whileHover={{
+                      color: "#c9c9bb",
+                      textDecoration: "underline",
+                    }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: "#fff",
+                      fontSize: 18,
+                    }}
+                    href="https://www.linkedin.com/in/leonardo-araujo-/"
+                    target="_blank"
+                  >
+                    <LinkedinFilled
+                      style={{ fontSize: "26px", marginRight: "8px" }}
+                    />
+                    Linkedin
+                  </motion.a>
+                </li>
+                <li
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "#fff",
+                    fontSize: 18,
+                    marginRight: 8,
+                  }}
+                >
+                  /
+                </li>
+                <li style={{ marginRight: "8px" }}>
+                  <motion.a
+                    whileHover={{
+                      color: "#c9c9bb",
+                      textDecoration: "underline",
+                    }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: "#fff",
+                      fontSize: 18,
+                    }}
+                    href="https://github.com/leoopardo"
+                    target="_blank"
+                  >
+                    <GithubFilled
+                      style={{ fontSize: "26px", marginRight: "8px" }}
+                    />
+                    Github
+                  </motion.a>
+                </li>
+                <li
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "#fff",
+                    fontSize: 18,
+                    marginRight: 8,
+                  }}
+                >
+                  /
+                </li>
+                <li style={{ marginRight: "8px" }}>
+                  <motion.a
+                    whileHover={{
+                      color: "#c9c9bb",
+                      textDecoration: "underline",
+                    }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: "#fff",
+                      fontSize: 18,
+                    }}
+                    target="_blank"
+                  >
+                    <MailOutlined
+                      style={{ fontSize: "26px", marginRight: "8px" }}
+                    />
+                    leo.san9@hotmail.com
+                  </motion.a>
+                </li>
+                <li
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "#fff",
+                    fontSize: 18,
+                    marginRight: 8,
+                  }}
+                >
+                  /
+                </li>
+                <li style={{ marginRight: "8px" }}>
+                  <motion.a
+                    whileHover={{
+                      color: "#c9c9bb",
+                      textDecoration: "underline",
+                    }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: "#fff",
+                      fontSize: 18,
+                    }}
+                    target="_blank"
+                  >
+                    <PhoneOutlined
+                      style={{ fontSize: "26px", marginRight: "8px" }}
+                    />
+                    +55 (45) 98836-9425
+                  </motion.a>
+                </li>
+                
+              </ul>
+            </Col>
+
+            <Col span={13} style={{ marginLeft: "15px" }}>
               <Row>
                 {Tags.map((stack, i) => (
                   <Col style={{ margin: 5 }}>
@@ -235,6 +356,7 @@ export const Desktop = () => {
                 ))}
               </Row>
             </Col>
+
             <Col span={9} style={{ marginLeft: "15px" }}>
               <motion.div
                 style={{
@@ -278,7 +400,7 @@ export const Desktop = () => {
               style={{
                 position: "absolute",
                 left: 40,
-                top: 300,
+                top: 330,
                 width: "100vw",
               }}
             >
@@ -473,41 +595,6 @@ export const Desktop = () => {
           }}
         />
       </Col>
-
-      <ul style={{ position: "fixed", right: 50, top: 20, listStyle: "none" }}>
-        <li style={{ marginBottom: "8px" }}>
-          <motion.a
-            whileHover={{ color: "#818181", textDecoration: "underline" }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "#fff",
-              fontSize: 20,
-            }}
-            href="https://www.linkedin.com/in/leonardo-araujo-/"
-            target="_blank"
-          >
-            <LinkedinFilled style={{ fontSize: "34px", marginRight: "8px" }} />
-            Linkedin
-          </motion.a>
-        </li>
-        <li>
-          <motion.a
-            whileHover={{ color: "#818181", textDecoration: "underline" }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "#fff",
-              fontSize: 20,
-            }}
-            href="https://github.com/leoopardo"
-            target="_blank"
-          >
-            <GithubFilled style={{ fontSize: "34px", marginRight: "8px" }} />
-            Github
-          </motion.a>
-        </li>
-      </ul>
     </Row>
   );
 };
