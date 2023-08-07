@@ -3,28 +3,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import {
-    Avatar,
-    Card,
-    Carousel,
-    Col,
-    Collapse,
-    Image,
-    List,
-    Row,
-    Tag,
-} from "antd";
+import { Avatar, Card, Col, Collapse, Image, List, Row, Tag } from "antd";
 import Meta from "antd/es/card/Meta";
 import {
-    motion,
-    useMotionValue,
-    useTransform,
-    useViewportScroll,
+  motion,
+  useMotionValue,
+  useTransform,
+  useViewportScroll,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import AnimatedTextCharacter from "../../components/TextSpring";
 import DashBalance from "../../assets/cases/balance.png";
 import DashBalanceDash from "../../assets/cases/balance_dashboard.png";
+import ec1 from "../../assets/cases/ecomerce/screen1.png";
+import ec2 from "../../assets/cases/ecomerce/screen2.png";
+import ec3 from "../../assets/cases/ecomerce/screen3.png";
 import DashLogin from "../../assets/cases/login.png";
 import Loupen from "../../assets/icons/Loupen.jpg";
 import Paybrokers from "../../assets/icons/Paybrokers.jpg";
@@ -37,7 +29,9 @@ import Mui from "../../assets/icons/mui.png";
 import Perfil from "../../assets/icons/perfil.png";
 import ReactIcon from "../../assets/icons/react.png";
 import Typescript from "../../assets/icons/typescript.png";
+import AnimatedTextCharacter from "../../components/TextSpring";
 import "../App.css";
+import { GithubFilled, LinkedinFilled } from "@ant-design/icons";
 
 export const Desktop = () => {
   const [, setScrolling] = useState(false);
@@ -404,42 +398,53 @@ export const Desktop = () => {
                 <Row style={{ width: "100%" }}>
                   <Col span={8}>
                     <Card
-                      hoverable
                       style={{ width: "100%" }}
                       cover={
-                        <Carousel autoplay autoplaySpeed={3500}>
-                          <div>
-                            <Image
-                              alt="example"
-                              src={DashLogin}
-                              style={{ width: "100%" }}
-                            />
-                          </div>
-                          <div>
-                            <Image
-                              alt="example"
-                              src={DashBalance}
-                              style={{ width: "100%" }}
-                            />
-                          </div>
-                          <div>
-                            <Image
-                              alt="example"
-                              src={DashBalanceDash}
-                              style={{ width: "100%" }}
-                            />
-                          </div>
-                          <div>
-                            <Image
-                              alt="example"
-                              src={DashLogin}
-                              style={{ width: "100%" }}
-                            />
-                          </div>
-                        </Carousel>
+                        <Image.PreviewGroup
+                          items={[DashLogin, DashBalance, DashBalanceDash]}
+                        >
+                          <Image
+                            alt="example"
+                            src={DashLogin}
+                            style={{ width: "100%" }}
+                          />
+                        </Image.PreviewGroup>
                       }
                     >
                       <Meta description="Dashboard" />
+                    </Card>
+                  </Col>
+                </Row>
+
+                <Row style={{ width: "100%", marginTop: "16px" }}>
+                  <Col span={8}>
+                    <Card
+                      style={{ width: "100%" }}
+                      cover={
+                        <Image.PreviewGroup items={[ec1, ec2, ec3]}>
+                          <Image
+                            alt="example"
+                            src={ec1}
+                            style={{ width: "100%" }}
+                          />
+                        </Image.PreviewGroup>
+                      }
+                    >
+                      <Meta
+                        description={
+                          <div>
+                            <p style={{ marginBottom: 0, paddingBottom: 0 }}>
+                              Ecomerce
+                            </p>
+                            <a
+                              href="https://roadevil.netlify.app/"
+                              target="_blank"
+                            >
+                              https://roadevil.netlify.app/
+                            </a>
+                          </div>
+                        }
+                      />
                     </Card>
                   </Col>
                 </Row>
@@ -457,8 +462,52 @@ export const Desktop = () => {
             backgroundSize: "29px 29px",
           }}
         />
-        <div id="part-3" style={{ height: "100vh", background: "#2e2e2e" }} />
+        <div
+          id="part-3"
+          style={{
+            height: "100vh",
+            opacity: 1,
+            backgroundImage:
+              "radial-gradient(#404949 1.4500000000000002px, #242424 1.4500000000000002px)",
+            backgroundSize: "29px 29px",
+          }}
+        />
       </Col>
+
+      <ul style={{ position: "fixed", right: 50, top: 20, listStyle: "none" }}>
+        <li style={{ marginBottom: "8px" }}>
+          <motion.a
+            whileHover={{ color: "#818181", textDecoration: "underline" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "#fff",
+              fontSize: 20,
+            }}
+            href="https://www.linkedin.com/in/leonardo-araujo-/"
+            target="_blank"
+          >
+            <LinkedinFilled style={{ fontSize: "34px", marginRight: "8px" }} />
+            Linkedin
+          </motion.a>
+        </li>
+        <li>
+          <motion.a
+            whileHover={{ color: "#818181", textDecoration: "underline" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "#fff",
+              fontSize: 20,
+            }}
+            href="https://github.com/leoopardo"
+            target="_blank"
+          >
+            <GithubFilled style={{ fontSize: "34px", marginRight: "8px" }} />
+            Github
+          </motion.a>
+        </li>
+      </ul>
     </Row>
   );
 };

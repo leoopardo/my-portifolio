@@ -192,13 +192,13 @@ export const Mobile = () => {
           }}
         >
           <div style={{ height: 30 }} />
-          <Row style={{ marginLeft: "30px" }}>
+          <Row style={{ marginLeft: "0px" }}>
             <Col span={24}>
-              <AnimatedTextCharacter text="Leonardo Araujo" />
+              <AnimatedTextCharacter text="Leonardo Araujo"  textStyle={{ fontSize: "36px" }}/>
               <AnimatedTextCharacter
                 text="Desenvolvedor de Front-end"
-                style={{ marginTop: "-35px" }}
-                textStyle={{ fontSize: "20px" }}
+                style={{ marginTop: "-55px" }}
+                textStyle={{ fontSize: "24px" }}
               />
             </Col>
             <Col span={24} style={{ marginLeft: "10px", marginTop: "-10px" }}>
@@ -284,9 +284,9 @@ export const Mobile = () => {
             <Row
               style={{
                 position: "absolute",
-                left: 40,
+                left: 20,
                 top: 600,
-                width: "80vw",
+                width: "87vw",
               }}
             >
               <Col span={24}>
